@@ -1,3 +1,11 @@
 * Air's dotfiles
 
 Manage my dotfiles.
+
+** Usage
+
+#+begin_src sh
+git clone {this repo}
+cd path/to/this/repo
+sh bootstrap.sh
+#+end_src
