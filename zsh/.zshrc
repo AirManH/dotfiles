@@ -116,6 +116,12 @@ alias ca="conda activate"
 alias cn="LANG=zh_CN.UTF-8"
 
 
+# reload the completion
+# it seems harmless and only makes sense if zsh-completions is installed
+# https://github.com/zsh-users/zsh-completions#oh-my-zsh
+autoload -U compinit && compinit
+
+
 # beautiful less
 
 # https://wiki.archlinux.org/index.php/Color_output_in_console#source-highlight
