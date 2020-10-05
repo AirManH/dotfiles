@@ -103,7 +103,7 @@ alias yay="yay --color=auto"
 alias em="emacs"
 alias pc="proxychains"
 
-if [ -x $(command -v exa) ]; then
+if [ -x "$(command -v exa)" ]; then
   alias ls="exa -alh"
 else
   alias ls="ls -alh --color=auto"
