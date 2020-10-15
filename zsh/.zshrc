@@ -108,6 +108,11 @@ if [ -x "$(command -v exa)" ]; then
 else
   alias ls="ls -alh --color=auto"
 fi
+# docker
+if [ -x $(command -v docker) ]; then
+  alias sdc="sudo docker"
+fi
+
 alias grep="grep --color=auto"
 alias tree="tree -lhC"
 
