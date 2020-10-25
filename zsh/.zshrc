@@ -146,7 +146,7 @@ export LESS_TERMCAP_us=$'\E[1;32m'
 
 # if using WSL, define default screen
 if [[ "$(uname -r)" =~ "(.?)Microsoft" ]]; then
-  export DISPLAY=:0.0
+  export DISPLAY=localhost:0.0
   # I hate "C:\Users\..."
   cd ${HOME}
 fi
