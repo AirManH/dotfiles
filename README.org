@@ -28,5 +28,5 @@ The =install.sh= will manage and install dotfiles in its folder.
    And change directory to the new folder (=cd hello=).
 2. Create the =install.sh=.
    For example: =echo "echo hello" > install.sh=
-3. Add the new =hello/install.sh= to the [[root install.sh][./install.sh]].
+3. Add the new =hello/install.sh= to the [[./install.sh][root install.sh]].
    For example: =echo 'echo ${cur_src_dir}/hello/install.sh' >> ${path/to/this/repo}/install.sh=
