@@ -2,10 +2,31 @@
 
 Manage my dotfiles.
 
-** Usage
+** Features
+
+- Modular organization
+
+** Quick Start
 
 #+begin_src sh
 git clone {this repo}
 cd path/to/this/repo
-sh bootstrap.sh
+chmod +x install.sh
+./install.sh
 #+end_src
+
+** Usage
+
+*** What is layer
+
+A /layer/ corresponds to a folder that contains a =install.sh= in its root directory.
+The =install.sh= will manage and install dotfiles in its folder.
+
+*** Add a new layer
+
+1. Create a new folder (such as =hello=) inside this repo.
+   And change directory to the new folder (=cd hello=).
+2. Create the =install.sh=.
+   For example: =echo "echo hello" > install.sh=
+3. Add the new =hello/install.sh= to the [[root install.sh][./install.sh]].
+   For example: =echo 'echo ${cur_src_dir}/hello/install.sh' >> ${path/to/this/repo}/install.sh=
