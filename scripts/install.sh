@@ -12,10 +12,10 @@ files=(
 )
 
 # no error if existing, make parent directories as needed
-mkdir -p "${HOME}/script"
+mkdir -p "${HOME}/scripts"
 
 for file in "${files[@]}"; do
     # backup before copy
-    cp "${cur_src_dir}/$file" "${HOME}/script/${file}" --backup --suffix=".old"
-    chmod +x "${HOME}/script/${file}"
+    cp "${cur_src_dir}/$file" "${HOME}/scripts/${file}" --backup --suffix=".old"
+    chmod +x "${HOME}/scripts/${file}"
 done
