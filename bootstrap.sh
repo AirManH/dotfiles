@@ -1,12 +1,11 @@
-# set root path of this repo
-cd "$(dirname "$0")"
-DOTFILES_ROOT=$(pwd -P)
+# @see https://stackoverflow.com/a/246128
+cur_src_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 
 # backup if the old one exists
 if [ -f ${HOME}/.zshrc ]; then
   mv ${HOME}/.zshrc ${HOME}/.zshrc.old
 fi
-cp ${DOTFILES_ROOT}/zsh/.zshrc ${HOME}/.zshrc
+cp ${cur_src_dir}/zsh/.zshrc ${HOME}/.zshrc
 
-source "${DOTFILES_ROOT}/scripts/install.sh"
+source "${cur_src_dir}/scripts/install.sh"
