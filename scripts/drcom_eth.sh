@@ -18,4 +18,4 @@ curl \
     iconv --from-code=GB2312 --to-code=UTF-8 |
     # find the string like that: "<title> string <\title>"
     sed -n "s/^.*<title>\s*\(\S*\)\s*<\/title>.*$/\1/p" |
-    if [[ "$(read str; echo $str)" != "认证成功页" ]]; then echo "error"; fi
+    if [[ "$(read str; echo $str)" != "登录成功窗" ]]; then echo "error"; fi
