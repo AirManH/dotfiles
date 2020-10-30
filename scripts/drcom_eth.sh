@@ -11,7 +11,8 @@ curl \
     -s \
     -d "DDDDD=${username}" \
     -d "upass=${passwd}" \
-    -d "0MKKey=123456" \
+    -d "0MKKey=%B5%C7%A1%A1%C2%BC" \
+    -d "v6ip=" \
     -X POST \
     "${drcom_website}" |
     iconv --from-code=GB2312 --to-code=UTF-8 |
