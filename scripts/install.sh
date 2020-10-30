@@ -19,7 +19,3 @@ for file in "${files[@]}"; do
     cp "${cur_src_dir}/$file" "${HOME}/script/${file}" --backup --suffix=".old"
     chmod +x "${HOME}/script/${file}"
 done
-
-
-unset files
-unset cur_src_dir
