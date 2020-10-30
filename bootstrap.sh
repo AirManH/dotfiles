@@ -8,3 +8,5 @@ if [ -f ${HOME}/.zshrc ]; then
   mv ${HOME}/.zshrc ${HOME}/.zshrc.old
 fi
 cp ${DOTFILES_ROOT}/zsh/.zshrc ${HOME}/.zshrc
+
+source "${DOTFILES_ROOT}/scripts/install.sh"
