@@ -35,8 +35,6 @@ function air_echo_color
     echo -e "${color}${msg}${air_color_no}"
 }
 
-proxy=""
-
 air_echo_color "green" "git config --global --unset http.proxy"
 air_echo_color "green" "git config --global --unset https.proxy"
 
