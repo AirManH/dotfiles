@@ -9,6 +9,8 @@ cur_src_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 files=(
     "drcom_eth.sh"
     "drcom_wifi.sh"
+    "git_set_proxy.sh"
+    "git_unset_proxy.sh"
 )
 
 # no error if existing, make parent directories as needed
