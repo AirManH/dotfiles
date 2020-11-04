@@ -9,3 +9,4 @@ cur_src_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 bash "${cur_src_dir}/zsh/install.sh"
 bash "${cur_src_dir}/scripts/install.sh"
+bash "${cur_src_dir}/windows-terminal/install.sh"
