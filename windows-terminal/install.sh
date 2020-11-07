@@ -9,16 +9,19 @@ config_file=""
 
 if [[ "$(uname -r)" == *Microsoft ]]; then
     # wsl
-    config_file="$(find /mnt/c/Users/*/AppData/Local/Packages/*/LocalState/settings.json | grep Terminal)"
+    config_file="$(find /mnt/c/Users/*/AppData/Local/Packages/*/LocalState/settings.json 2>/dev/null | grep Terminal)"
 elif [[ "$(uname -s)" == MINGW* ]]; then
     # mingw
-    config_file="find /c/Users/*/AppData/Local/Packages/*/LocalState/settings.json | grep Terminal"
+    config_file="find /c/Users/*/AppData/Local/Packages/*/LocalState/settings.json 2>/dev/null | grep Terminal"
 elif [[ "$(uname -s)" == MSYS* ]]; then
     # msys
-    config_file="find /c/Users/*/AppData/Local/Packages/*/LocalState/settings.json | grep Terminal"
+    config_file="find /c/Users/*/AppData/Local/Packages/*/LocalState/settings.json 2>/dev/null| grep Terminal"
 else
     exit 1
 fi
 
-cp "${cur_src_dir}/settings.json" "${config_file}" \
-   --backup --suffix=".old"
+# if $config_file has zero length, it means windows-terminal is not installed
+if [[ -n "${config_file}" ]]; then
+    cp "${cur_src_dir}/settings.json" "${config_file}" \
+       --backup --suffix=".old"
+fi
