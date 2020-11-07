@@ -12,6 +12,11 @@ files=(
 
 dest_dir="${HOME}"
 
+# this .zshrc relies on oh-my-zsh
+if [[ -z "$(find ${HOME}/.oh-my-zsh 2>/dev/null)" ]]; then
+    exit 1
+fi
+
 for file in "${files[@]}"; do
     cp "${cur_src_dir}/${file}" "${dest_dir}" \
        --backup --suffix=".old"
