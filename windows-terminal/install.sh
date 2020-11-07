@@ -21,7 +21,9 @@ else
 fi
 
 # if $config_file has zero length, it means windows-terminal is not installed
-if [[ -n "${config_file}" ]]; then
-    cp "${cur_src_dir}/settings.json" "${config_file}" \
-       --backup --suffix=".old"
+if [[ -z "${config_file}" ]]; then
+    exit 1
 fi
+
+cp "${cur_src_dir}/settings.json" "${config_file}" \
+   --backup --suffix=".old"
