@@ -144,6 +144,15 @@ export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[1;32m'
 
 
+# enable fish-like syntax highlighting and autosuggestions
+if [[ -r /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
+    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+if [[ -r /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
+    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+
+
 # if using WSL, define default screen
 if [[ "$(uname -r)" =~ "(.?)Microsoft" ]]; then
   export DISPLAY=localhost:0.0
