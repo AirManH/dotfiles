@@ -147,6 +147,7 @@ export LESS_TERMCAP_us=$'\E[1;32m'
 # if using WSL, define default screen
 if [[ "$(uname -r)" =~ "(.?)Microsoft" ]]; then
   export DISPLAY=localhost:0.0
+  export $(dbus-launch)
   # I hate "C:\Users\..."
   cd ${HOME}
 fi
