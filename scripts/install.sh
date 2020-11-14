@@ -11,6 +11,7 @@ files=(
     "drcom_wifi.sh"
     "git_set_proxy.sh"
     "git_unset_proxy.sh"
+    "mirror_update.sh"
 )
 
 # no error if existing, make parent directories as needed
