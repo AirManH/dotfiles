@@ -155,10 +155,27 @@ fi
 
 # if using WSL, define default screen
 if [[ "$(uname -r)" =~ "(.?)Microsoft" ]]; then
-  export DISPLAY=localhost:0.0
-  export $(dbus-launch)
-  # I hate "C:\Users\..."
-  cd ${HOME}
+    export DISPLAY=localhost:0.0
+
+    # {{{ --- DBUS
+    # To run dbus based GUI applications in ArchWSL,
+    # you need the dbus-daemon running in background,
+    # and to export corresponding variables.
+    # Since there is no *systemctl*, we have to manage it ourselves.
+    # I do 2 things below:
+    #   1. Make sure that there is only one instance of dbus-daemon.
+    #   2. Save dbus varibles to the file "~/.dbus-var"
+    if [[ -z "$(pidof dbus-daemon)" ]]; then
+        echo "$(dbus-launch)" > "${HOME}/.dbus-var"
+    fi
+    # https://unix.stackexchange.com/a/79077
+    set -o allexport
+    source "${HOME}/.dbus-var"
+    set +o allexport
+    # }}} --- DBUS
+
+    # I hate "C:\Users\..."
+    cd ${HOME}
 fi
 
 
