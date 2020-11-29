@@ -164,7 +164,7 @@ if [[ "$(uname -r)" =~ "(.?)Microsoft" ]]; then
     # Since there is no *systemctl*, we have to manage it ourselves.
     # I do 2 things below:
     #   1. Make sure that there is only one instance of dbus-daemon.
-    #   2. Save dbus varibles to the file "~/.dbus-var"
+    #   2. Save dbus variables to the file "~/.dbus-var"
     if [[ -z "$(pidof dbus-daemon)" ]]; then
         echo "$(dbus-launch)" > "${HOME}/.dbus-var"
     fi
