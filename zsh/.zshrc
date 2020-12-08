@@ -165,13 +165,15 @@ if [[ "$(uname -r)" =~ "(.?)Microsoft" ]]; then
     # I do 2 things below:
     #   1. Make sure that there is only one instance of dbus-daemon.
     #   2. Save dbus variables to the file "~/.dbus-var"
-    if [[ -z "$(pidof dbus-daemon)" ]]; then
-        echo "$(dbus-launch)" > "${HOME}/.dbus-var"
+    if [[ -x "dbus-launch" ]]; then
+        if [[ -z "$(pidof dbus-daemon)" ]]; then
+            echo "$(dbus-launch)" > "${HOME}/.dbus-var"
+        fi
+        # https://unix.stackexchange.com/a/79077
+        set -o allexport
+        source "${HOME}/.dbus-var"
+        set +o allexport
     fi
-    # https://unix.stackexchange.com/a/79077
-    set -o allexport
-    source "${HOME}/.dbus-var"
-    set +o allexport
     # }}} --- DBUS
 
     # I hate "C:\Users\..."
