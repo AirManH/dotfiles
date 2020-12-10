@@ -1,0 +1,10 @@
+* Zathura
+
+see also [[https://pwmt.org/projects/zathura/documentation/][zathura official documentation]]
+
+** Key Map
+
+| shortcut | function |
+|----------+----------|
+| =C-i=    | zoom in  |
+| =C-o=    | zoom out |

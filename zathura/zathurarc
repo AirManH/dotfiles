@@ -1,0 +1,7 @@
+# see also https://pwmt.org/projects/zathura/documentation/
+
+
+# zoom
+map <C-i> zoom in
+map <C-o> zoom out
+
