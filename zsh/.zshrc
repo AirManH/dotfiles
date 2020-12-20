@@ -181,20 +181,23 @@ if [[ "$(uname -r)" =~ "(.?)Microsoft" ]]; then
 fi
 
 
+# Remember to set the root path of anaconda!
+air_conda_root_path="${HOME}/Programs/miniconda3"
 # if using Miniconda3
-if [ -d "${HOME}/Programs/miniconda3" ]; then
+if [ -d "${air_conda_root_path}" ]; then
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('${HOME}/Programs/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('${air_conda_root_path}/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "${HOME}/Programs/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "${HOME}/Programs/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "${air_conda_root_path}/etc/profile.d/conda.sh" ]; then
+        . "${air_conda_root_path}/etc/profile.d/conda.sh"
     else
-         export PATH="${HOME}/Programs/miniconda3/bin:$PATH"
+         export PATH="${air_conda_root_path}/bin:$PATH"
     fi
 fi
 unset __conda_setup
+unset air_conda_root_path
 # <<< conda initialize <<<
 fi
