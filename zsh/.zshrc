@@ -165,7 +165,7 @@ if [[ "$(uname -r)" =~ "(.?)Microsoft" ]]; then
     # I do 2 things below:
     #   1. Make sure that there is only one instance of dbus-daemon.
     #   2. Save dbus variables to the file "~/.dbus-var"
-    if [[ -x "dbus-launch" ]]; then
+    if [[ -x "$(command -v dbus-launch)" ]]; then
         if [[ -z "$(pidof dbus-daemon)" ]]; then
             echo "$(dbus-launch)" > "${HOME}/.dbus-var"
         fi
