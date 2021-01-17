@@ -1,0 +1,11 @@
+* Tmux
+
+See also [[https://wiki.archlinux.org/index.php/Tmux][Tmux page on Archlinux Wiki]].
+
+** Appearance
+
+Support 256 color terminal:
+
+#+begin_src
+set -g default-terminal "tmux-256color"
+#+end_src
