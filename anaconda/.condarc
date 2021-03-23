@@ -1,0 +1,11 @@
+auto_activate_base: false
+
+show_channel_urls: true
+channels:
+  - defaults
+default_channels:
+  - https://anaconda.mirrors.sjtug.sjtu.edu.cn/pkgs/main
+custom_channels:
+  conda-forge: https://anaconda.mirrors.sjtug.sjtu.edu.cn/cloud/
+  pytorch: https://anaconda.mirrors.sjtug.sjtu.edu.cn/cloud/
+
