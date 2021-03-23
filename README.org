@@ -19,14 +19,22 @@ chmod +x install.sh
 
 *** What is layer
 
-A /layer/ corresponds to a folder that contains a =install.sh= in its root directory.
-The =install.sh= will manage and install dotfiles in its folder.
+A /layer/ corresponds to a folder that contains a =install.sh= in its root
+directory.
+Each =install.sh= will be executed, and should manage and install dotfiles in
+its folder.
 
-*** Add a new layer
+*** How to add a new layer
 
 1. Create a new folder (such as =hello=) inside this repo.
    And change directory to the new folder (=cd hello=).
 2. Create the =install.sh=.
    For example: =echo "echo hello" > install.sh=
-3. Add the new =hello/install.sh= to the [[./install.sh][root install.sh]].
-   For example: =echo 'bash ${cur_src_dir}/hello/install.sh' >> ${path/to/this/repo}/install.sh=
+3. Add the new =hello= layer to the [[./install.sh][root install.sh]].
+   For example:
+   #+begin_src bash
+layers=(
+    ...
+    "hello"
+)
+   #+end_src

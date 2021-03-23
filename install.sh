@@ -7,10 +7,17 @@
 cur_src_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 
-bash "${cur_src_dir}/zsh/install.sh"
-bash "${cur_src_dir}/scripts/install.sh"
-bash "${cur_src_dir}/windows-terminal/install.sh"
-bash "${cur_src_dir}/zathura/install.sh"
-bash "${cur_src_dir}/tmux/install.sh"
-bash "${cur_src_dir}/anaconda/install.sh"
-bash "${cur_src_dir}/pip/install.sh"
+layers=(
+    "anaconda"
+    "pip"
+    "scripts"
+    "tmux"
+    "windows-terminal"
+    "zathura"
+    "zsh"
+)
+
+
+for layer in "${layers[@]}"; do
+    bash "${cur_src_dir}/${layer}/install.sh"
+done
