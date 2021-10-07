@@ -11,7 +11,7 @@ url="git@github.com:AirManH/.emacs.d.git"
 depends=(emacs git)
 
 # Check depends
-for exe in "${depends}"; do
+for exe in "${depends[@]}"; do
     if [ ! -x "$(command -v ${exe})" ]; then
         exit 1;
     fi
