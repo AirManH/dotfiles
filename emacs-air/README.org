@@ -1,0 +1,7 @@
+* air-emacs
+
+[[https://github.com/AirManH/.emacs.d][AirManH's Emacs configuration files]].
+
+Upstream: =git@github.com:AirManH/.emacs.d.git=
+
+The repo will be cloned to =${HOME}/.emacs.d.air=.

@@ -15,6 +15,7 @@ layers=(
     "windows-terminal"
     "zathura"
     "zsh"
+    "emacs-air"
 )
 
 
