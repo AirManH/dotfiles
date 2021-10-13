@@ -145,12 +145,16 @@ export LESS_TERMCAP_us=$'\E[1;32m'
 
 
 # enable fish-like syntax highlighting and autosuggestions
-if [[ -r /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
-    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-fi
-if [[ -r /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
-    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-fi
+zsh_asgs_dir_list=(
+    '/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
+    '/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh'
+)
+for zsh_asgs_dir in "${zsh_asgs_dir_list[@]}"; do
+    if [ -r "${zsh_asgs_dir}" ]; then
+        source "${zsh_asgs_dir}"
+        break
+    fi
+done
 
 
 # if using WSL, define default screen
