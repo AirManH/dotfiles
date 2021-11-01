@@ -18,7 +18,27 @@ if [[ -x "$(command -v tmux)" ]]; then
         cp "${cur_src_dir}/${file}" "${dest_dir}" \
            --backup --suffix=".old"
     done
-    exit 0
 else
     exit 1
 fi
+
+
+# {{{ Install Tmux Plugin Manager
+# See https://github.com/tmux-plugins/tpm
+url="https://github.com/tmux-plugins/tpm.git"
+depends=(bash git)
+tpm_dest_dir="${HOME}/.tmux/plugins/tpm"
+
+
+# Check depends
+for exe in "${depends[@]}"; do
+    if [ ! -x "$(command -v ${exe})" ]; then
+        exit 1;
+    fi
+done
+
+if [ ! -d "${tpm_dest_dir}" ]; then
+    mkdir -p ${tpm_dest_dir}
+    git clone "${url}" "${tpm_dest_dir}"
+fi
+# }}}
