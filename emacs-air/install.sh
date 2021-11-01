@@ -7,7 +7,8 @@ cur_src_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 
 dest_dir="${HOME}/.emacs.d.air"
-url="git@github.com:AirManH/.emacs.d.git"
+# url="git@github.com:AirManH/.emacs.d.git"
+url="https://github.com/AirManH/.emacs.d.git"
 depends=(emacs git)
 
 # Check depends
