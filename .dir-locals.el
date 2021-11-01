@@ -3,4 +3,4 @@
 
 ((nil . ((indent-tabs-mode . nil)
          (fill-column . 80)
-         (coding . prefer-utf-8))))
+         )))
