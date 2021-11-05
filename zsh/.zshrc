@@ -180,9 +180,6 @@ if [[ "$(uname -r)" =~ "(.?)Microsoft" ]]; then
         set +o allexport
     fi
     # }}} --- DBUS
-
-    # I hate "C:\Users\..."
-    cd ${HOME}
 fi
 
 
