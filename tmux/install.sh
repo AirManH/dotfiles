@@ -32,11 +32,13 @@ git_url_list=(
     "https://github.com/tmux-plugins/tpm.git"
     "https://github.com/tmux-plugins/tmux-sensible.git"
     "https://github.com/MunifTanjim/tmux-mode-indicator.git"
+    "https://github.com/tmux-plugins/tmux-pain-control.git"
 )
 git_name_list=(
     "tpm"
     "tmux-sensible"
     "tmux-mode-indicator"
+    "tmux-pain-control"
 )
 depends=(bash git)
 tpm_plugin_dir="${HOME}/.tmux/plugins"
