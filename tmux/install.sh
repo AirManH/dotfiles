@@ -6,6 +6,7 @@
 cur_src_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 
+# {{{ cp tmux config file
 files=(
     ".tmux.conf"
 )
@@ -21,13 +22,22 @@ if [[ -x "$(command -v tmux)" ]]; then
 else
     exit 1
 fi
+# }}}
 
 
-# {{{ Install Tmux Plugin Manager
+# {{{ Install Tmux Plugin Manager and plugins
 # See https://github.com/tmux-plugins/tpm
-url="https://github.com/tmux-plugins/tpm.git"
+
+git_url_list=(
+    "https://github.com/tmux-plugins/tpm.git"
+    "https://github.com/tmux-plugins/tmux-sensible.git"
+)
+git_name_list=(
+    "tpm"
+    "tmux-sensible"
+)
 depends=(bash git)
-tpm_dest_dir="${HOME}/.tmux/plugins/tpm"
+tpm_plugin_dir="${HOME}/.tmux/plugins"
 
 
 # Check depends
@@ -37,8 +47,18 @@ for exe in "${depends[@]}"; do
     fi
 done
 
-if [ ! -d "${tpm_dest_dir}" ]; then
-    mkdir -p ${tpm_dest_dir}
-    git clone "${url}" "${tpm_dest_dir}"
+# clone plugins manually
+if [ ! -d "${tpm_plugin_dir}" ]; then
+    mkdir -p ${tpm_plugin_dir}
 fi
+
+for i in "${!git_name_list[@]}"; do
+    git_name="${git_name_list[i]}"
+    git_url="${git_url_list[i]}"
+    dest_dir="${tpm_plugin_dir}/${git_name}"
+    echo "${dest_dir}"
+    if [ ! -d "${dest_dir}" ]; then
+        git clone "${git_url}" "${dest_dir}"
+    fi
+done
 # }}}
