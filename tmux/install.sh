@@ -31,10 +31,12 @@ fi
 git_url_list=(
     "https://github.com/tmux-plugins/tpm.git"
     "https://github.com/tmux-plugins/tmux-sensible.git"
+    "https://github.com/MunifTanjim/tmux-mode-indicator.git"
 )
 git_name_list=(
     "tpm"
     "tmux-sensible"
+    "tmux-mode-indicator"
 )
 depends=(bash git)
 tpm_plugin_dir="${HOME}/.tmux/plugins"
