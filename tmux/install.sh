@@ -60,7 +60,6 @@ for i in "${!git_name_list[@]}"; do
     git_name="${git_name_list[i]}"
     git_url="${git_url_list[i]}"
     dest_dir="${tpm_plugin_dir}/${git_name}"
-    echo "${dest_dir}"
     if [ ! -d "${dest_dir}" ]; then
         git clone "${git_url}" "${dest_dir}"
     fi
