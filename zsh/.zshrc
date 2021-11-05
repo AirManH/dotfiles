@@ -146,13 +146,22 @@ export LESS_TERMCAP_us=$'\E[1;32m'
 
 # enable fish-like syntax highlighting and autosuggestions
 zsh_asgs_dir_list=(
-    '/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
     '/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh'
     '/usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh'
 )
 for zsh_asgs_dir in "${zsh_asgs_dir_list[@]}"; do
     if [ -r "${zsh_asgs_dir}" ]; then
         source "${zsh_asgs_dir}"
+        break
+    fi
+done
+
+zsh_hl_dir_list=(
+    '/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
+)
+for zsh_hl_dir in "${zsh_hl_dir_list[@]}"; do
+    if [ -r "${zsh_hl_dir}" ]; then
+        source "${zsh_hl_dir}"
         break
     fi
 done
